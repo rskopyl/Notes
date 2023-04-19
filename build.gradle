@@ -1,0 +1,19 @@
+buildscript {
+    ext {
+        // Plugins
+        android_plugin_version = "8.0.0"
+
+        // Android
+        app_compat_version = "1.6.1"
+
+        // Interface
+        material_version = "1.8.0"
+    }
+}
+plugins {
+    id "com.android.application" version "$android_plugin_version" apply false
+}
+
+tasks.register("clean") {
+    remove(rootProject.buildDir)
+}

@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    defaultConfig {
+        namespace "com.rskopyl.notes"
+        applicationId "com.rskopyl.notes"
+
+        compileSdk 33
+        targetSdk 33
+        minSdk 24
+
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Android
+    implementation "androidx.appcompat:appcompat:$app_compat_version"
+
+    // Interface
+    implementation "com.google.android.material:material:$material_version"
+}
