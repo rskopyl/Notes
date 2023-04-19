@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextAppearance - Display -->
+    <style name="TextAppearance.Notes.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.Notes.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.Notes.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- TextAppearance - Headline -->
+    <style name="TextAppearance.Notes.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.Notes.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.Notes.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <!-- TextAppearance - Title -->
+    <style name="TextAppearance.Notes.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.Notes.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Notes.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- TextAppearance - Body -->
+    <style name="TextAppearance.Notes.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.Notes.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.Notes.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- TextAppearance - Label -->
+    <style name="TextAppearance.Notes.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.Notes.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.Notes.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+</resources>
