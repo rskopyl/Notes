@@ -5,6 +5,15 @@ buildscript {
 
         // Android
         app_compat_version = "1.6.1"
+        lifecycle_version = "2.6.1"
+
+        // Java
+        desugaring_version = "2.0.3"
+        rxjava_version = "3.1.6"
+        rxjava_android_version = "3.0.2"
+
+        // Dagger
+        dagger_version = "2.45"
 
         // Interface
         material_version = "1.8.0"

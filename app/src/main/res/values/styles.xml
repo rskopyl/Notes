@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Toolbar -->
+    <style name="ThemeOverlay.Notes.ActionMenuView" parent="Theme.Notes.DayNight">
+        <item name="android:textColorSecondary">?attr/colorOnBackground</item>
+    </style>
+
     <!-- TextAppearance - Display -->
     <style name="TextAppearance.Notes.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="fontFamily">@font/roboto_regular</item>

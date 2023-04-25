@@ -23,6 +23,7 @@ android {
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -34,7 +35,17 @@ android {
 dependencies {
     // Android
     implementation "androidx.appcompat:appcompat:$app_compat_version"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
 
+    // Java
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugaring_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxjava_android_version"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    
     // Interface
     implementation "com.google.android.material:material:$material_version"
 }

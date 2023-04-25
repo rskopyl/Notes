@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/colorBackground"
+        android:paddingVertical="@dimen/small_125">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_expanded"
+            android:background="?android:attr/colorBackground"
+            app:collapsedTitleTextAppearance="?attr/textAppearanceTitleMedium"
+            app:collapsedTitleTextColor="?attr/colorOnBackground"
+            app:expandedTitleGravity="top"
+            app:expandedTitleTextAppearance="?attr/textAppearanceDisplayMedium"
+            app:expandedTitleTextColor="?attr/colorOnBackground"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="@string/notes"
+            app:titleCollapseMode="scale">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+            <androidx.appcompat.widget.ActionMenuView
+                android:id="@+id/amv_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="bottom|end"
+                android:theme="@style/ThemeOverlay.Notes.ActionMenuView" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_notes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:padding="@dimen/medium_100"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:listitem="@layout/item_note" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_create"
+        style="?attr/floatingActionButtonPrimaryStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/medium_150"
+        android:layout_marginBottom="@dimen/large_75"
+        android:contentDescription="@string/create_note"
+        app:srcCompat="@drawable/ic_add_outlined" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
