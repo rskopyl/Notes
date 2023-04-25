@@ -21,8 +21,8 @@ public class MultiViewModelFactory implements ViewModelProvider.Factory {
     }
 
     @NonNull
-
     @Override
+    @SuppressWarnings({"unchecked", "ConstantConditions"})
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         return (T) viewModels.get(modelClass).get();
     }

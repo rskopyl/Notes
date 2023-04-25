@@ -12,6 +12,6 @@ public class Notes extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        appComponent = DaggerAppComponent.create();
+        appComponent = DaggerAppComponent.factory().create(this);
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.rskopyl.notes.Notes;
 import com.rskopyl.notes.databinding.ActivityMainBinding;
 
 public final class MainActivity extends AppCompatActivity {
@@ -16,5 +17,16 @@ public final class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (isFinishing()) {
+            ((Notes) getApplicationContext())
+                    .appComponent
+                    .getApplicationDisposable()
+                    .dispose();
+        }
     }
 }

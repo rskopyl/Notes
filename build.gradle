@@ -17,6 +17,10 @@ buildscript {
 
         // Interface
         material_version = "1.8.0"
+
+        // Persistence
+        room_version = "2.5.1"
+        kotlin_version = "1.8.21"
     }
 }
 plugins {

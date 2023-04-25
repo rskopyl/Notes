@@ -1,25 +1,38 @@
 package com.rskopyl.notes.data.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity(tableName = "note")
 public class Note {
 
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
     public long id;
 
+    @ColumnInfo(name = "title")
     public String title;
 
+    @ColumnInfo(name = "content")
     public String content;
 
+    @ColumnInfo(name = "date_time")
     public LocalDateTime dateTime;
 
+    @ColumnInfo(name = "is_pinned")
     public boolean isPinned;
 
-    public Note(long id,
-                String title,
-                String content,
-                LocalDateTime dateTime,
-                boolean isPinned) {
+    public Note(
+            long id,
+            String title,
+            String content,
+            LocalDateTime dateTime,
+            boolean isPinned
+    ) {
         this.id = id;
         this.title = title;
         this.content = content;

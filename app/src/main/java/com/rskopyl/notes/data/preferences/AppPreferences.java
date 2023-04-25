@@ -10,5 +10,11 @@ public class AppPreferences {
         this.rendering = rendering;
     }
 
-    public enum Rendering {LIST, GRID}
+    public enum Rendering {
+        LIST, GRID;
+
+        Rendering opposite() {
+            return this == LIST ? GRID : LIST;
+        }
+    }
 }

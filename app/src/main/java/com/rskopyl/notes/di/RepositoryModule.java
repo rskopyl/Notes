@@ -1,9 +1,9 @@
 package com.rskopyl.notes.di;
 
 import com.rskopyl.notes.data.preferences.AppPreferencesManager;
-import com.rskopyl.notes.data.preferences.EmptyAppPreferencesManager;
+import com.rskopyl.notes.data.preferences.AppPreferencesManagerImpl;
 import com.rskopyl.notes.repository.NoteRepository;
-import com.rskopyl.notes.repository.impl.EmptyNoteRepository;
+import com.rskopyl.notes.repository.impl.NoteRepositoryImpl;
 
 import javax.inject.Singleton;
 
@@ -15,9 +15,9 @@ public interface RepositoryModule {
 
     @Binds
     @Singleton
-    NoteRepository bindNoteRepository(EmptyNoteRepository impl);
+    NoteRepository bindNoteRepository(NoteRepositoryImpl impl);
 
     @Binds
     @Singleton
-    AppPreferencesManager bindAppPreferencesManager(EmptyAppPreferencesManager impl);
+    AppPreferencesManager bindAppPreferencesManager(AppPreferencesManagerImpl impl);
 }
