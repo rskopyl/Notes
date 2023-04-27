@@ -17,4 +17,8 @@
     <string name="title">Title</string>
     <string name="content">Content</string>
     <string name="note_saved">Note saved</string>
+
+    <!-- Search -->
+    <string name="note_search">Search for notes</string>
+    <string name="clear">Clear</string>
 </resources>

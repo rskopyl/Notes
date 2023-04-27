@@ -20,6 +20,7 @@ import com.rskopyl.notes.data.preferences.AppPreferences.Rendering;
 import com.rskopyl.notes.databinding.FragmentHomeBinding;
 import com.rskopyl.notes.ui.MultiViewModelFactory;
 import com.rskopyl.notes.ui.details.DetailsFragment;
+import com.rskopyl.notes.ui.search.SearchFragment;
 import com.rskopyl.notes.utils.MenuUtils;
 import com.rskopyl.notes.utils.SpacingItemDecoration;
 import com.rskopyl.notes.utils.ThemeUtils;
@@ -67,7 +68,13 @@ public class HomeFragment extends Fragment {
         MenuUtils.setOnMenuItemClickListener(
                 menu,
                 menuItem -> {
-                    if (menuItem.getItemId() == R.id.mi_appearance) {
+                    if (menuItem.getItemId() == R.id.mi_search) {
+                        getParentFragmentManager().beginTransaction()
+                                .add(R.id.fcv_main, SearchFragment.class, null)
+                                .setReorderingAllowed(true)
+                                .addToBackStack(null)
+                                .commit();
+                    } else if (menuItem.getItemId() == R.id.mi_appearance) {
                         viewModel.toggleRendering();
                     } else {
                         return false;

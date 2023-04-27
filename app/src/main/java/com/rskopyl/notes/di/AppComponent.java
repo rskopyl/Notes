@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.rskopyl.notes.ui.details.DetailsFragment;
 import com.rskopyl.notes.ui.home.HomeFragment;
+import com.rskopyl.notes.ui.search.SearchFragment;
 
 import javax.inject.Singleton;
 
@@ -26,6 +27,8 @@ public interface AppComponent {
     void inject(HomeFragment fragment);
 
     void inject(DetailsFragment fragment);
+
+    void inject(SearchFragment fragment);
 
     @ApplicationDisposable
     CompositeDisposable getApplicationDisposable();

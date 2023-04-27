@@ -1,6 +1,7 @@
 package com.rskopyl.notes.data.preferences;
 
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
 import androidx.annotation.NonNull;
 
@@ -21,8 +22,6 @@ public class AppPreferencesManagerImpl implements AppPreferencesManager {
 
     private final CompositeDisposable disposable;
 
-    private SharedPreferences.OnSharedPreferenceChangeListener listener;
-
     @Inject
     public AppPreferencesManagerImpl(
             @NonNull SharedPreferences sharedPreferences,
@@ -35,17 +34,22 @@ public class AppPreferencesManagerImpl implements AppPreferencesManager {
     @NonNull
     @Override
     public Flowable<AppPreferences> getAll() {
+        final OnSharedPreferenceChangeListener[] listener = { null };
         Flowable<AppPreferences> flowable = Flowable.create(
                 emitter -> {
-                    listener = (sharedPreferences, key) -> {
+                    listener[0] = (sharedPreferences, key) -> {
                         emitter.onNext(mapPreferences(sharedPreferences));
                     };
                     emitter.onNext(mapPreferences(sharedPreferences));
-                    sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
+                    sharedPreferences.registerOnSharedPreferenceChangeListener(listener[0]);
                 },
                 BackpressureStrategy.LATEST
         );
-        return flowable.subscribeOn(Schedulers.io());
+        return flowable
+                .doOnCancel(() -> {
+                    sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener[0]);
+                })
+                .subscribeOn(Schedulers.io());
     }
 
     @Override
