@@ -3,6 +3,7 @@
     <!-- Small -->
     <dimen name="smallest">0.5dp</dimen>
     <dimen name="small_50">3dp</dimen>
+    <dimen name="small_75">4dp</dimen>
     <dimen name="small_100">6dp</dimen>
     <dimen name="small_125">8dp</dimen>
     <dimen name="small_200">12dp</dimen>
@@ -13,7 +14,7 @@
     <dimen name="medium_150">24dp</dimen>
 
     <!-- Large -->
-    <dimen name="large_75">48dp</dimen>
+    <dimen name="large_100">48dp</dimen>
 
     <!-- Other -->
     <dimen name="app_bar_expanded">250dp</dimen>

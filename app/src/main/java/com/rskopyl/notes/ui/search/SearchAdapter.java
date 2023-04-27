@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.rskopyl.notes.data.model.Note;
 import com.rskopyl.notes.databinding.ItemNoteBinding;
@@ -39,10 +39,6 @@ public class SearchAdapter extends ListAdapter<Note, SearchAdapter.NoteViewHolde
     private String pattern = "";
 
     private final int colorPrimary;
-
-    public SearchAdapter(Context context) {
-        this(context, null);
-    }
 
     public SearchAdapter(
             @NonNull Context context,
@@ -107,7 +103,7 @@ public class SearchAdapter extends ListAdapter<Note, SearchAdapter.NoteViewHolde
             Date date = new Date(
                     note.dateTime.toInstant(ZoneOffset.UTC).toEpochMilli()
             );
-            boolean isExpanded = layoutManager instanceof GridLayoutManager;
+            boolean isExpanded = layoutManager instanceof StaggeredGridLayoutManager;
             boolean hasContent = !note.content.isEmpty();
 
             binding.tvTitle.setText(spanText(note.title));

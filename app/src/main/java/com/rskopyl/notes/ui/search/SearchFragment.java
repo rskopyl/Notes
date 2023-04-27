@@ -1,5 +1,6 @@
 package com.rskopyl.notes.ui.search;
 
+import static androidx.recyclerview.widget.StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS;
 import static com.rskopyl.notes.data.preferences.AppPreferences.Rendering;
 
 import android.content.Context;
@@ -12,9 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.rskopyl.notes.Notes;
 import com.rskopyl.notes.R;
@@ -24,7 +25,6 @@ import com.rskopyl.notes.ui.MultiViewModelFactory;
 import com.rskopyl.notes.ui.details.DetailsFragment;
 import com.rskopyl.notes.utils.ContextUtils;
 import com.rskopyl.notes.utils.DefaultTextWatcher;
-import com.rskopyl.notes.utils.SpacingItemDecoration;
 
 import javax.inject.Inject;
 
@@ -62,13 +62,7 @@ public class SearchFragment extends Fragment {
         });
 
         binding.rvNotes.setHasFixedSize(true);
-        binding.rvNotes.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.rvNotes.setAdapter(searchAdapter);
-        binding.rvNotes.addItemDecoration(
-                new SpacingItemDecoration(
-                        getResources().getDimensionPixelSize(R.dimen.small_125)
-                )
-        );
     }
 
     private void setupObservers() {
@@ -87,9 +81,16 @@ public class SearchFragment extends Fragment {
     }
 
     private void showRendering(AppPreferences.Rendering rendering) {
-        RecyclerView.LayoutManager manager = rendering == Rendering.LIST ?
-                new LinearLayoutManager(requireContext()) :
-                new GridLayoutManager(requireContext(), 2);
+        RecyclerView.LayoutManager manager;
+        if (rendering == Rendering.LIST) {
+            manager = new LinearLayoutManager(requireContext());
+        } else {
+            StaggeredGridLayoutManager staggered = new StaggeredGridLayoutManager(
+                    2, StaggeredGridLayoutManager.VERTICAL
+            );
+            staggered.setGapStrategy(GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
+            manager = staggered;
+        }
         binding.rvNotes.setLayoutManager(manager);
         searchAdapter.setLayoutManager(manager);
     }
@@ -98,7 +99,7 @@ public class SearchFragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         ((Notes) context.getApplicationContext()).appComponent.inject(this);
-        searchAdapter  = new SearchAdapter(
+        searchAdapter = new SearchAdapter(
                 requireContext(),
                 (note) -> {
                     Bundle args = new Bundle();

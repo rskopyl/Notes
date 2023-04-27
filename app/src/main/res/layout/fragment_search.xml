@@ -60,7 +60,8 @@
         android:layout_weight="1"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:padding="@dimen/medium_100"
+        android:padding="@dimen/small_200"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="10"
         tools:listitem="@layout/item_note" />
 

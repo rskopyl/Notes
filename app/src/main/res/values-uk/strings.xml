@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Notes</string>
+
+    <!-- Home -->
     <string name="notes">Нотатки</string>
     <string name="search">Пошук</string>
     <string name="list">Подання списку</string>
     <string name="grid">Подання сітки</string>
+    <string name="pinned">Закріплено</string>
     <string name="create_note">Створити нотатку</string>
+
+    <!-- Details -->
     <string name="save">Зберегти</string>
     <string name="share">Поширити</string>
     <string name="pin">Закріпити вгорі</string>
+    <string name="unpin">Відкріпити</string>
+    <string name="delete">Видалити</string>
     <string name="title">Назва</string>
     <string name="content">Зміст</string>
-    <string name="delete">Видалити</string>
-    <string name="unpin">Відкріпити</string>
     <string name="note_saved">Нотатку збережено</string>
+
+    <!-- Search -->
     <string name="note_search">Пошук нотаток</string>
     <string name="clear">Очистити</string>
 </resources>
