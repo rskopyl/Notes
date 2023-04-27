@@ -7,4 +7,14 @@
     <string name="list">List View</string>
     <string name="grid">Grid View</string>
     <string name="create_note">Create Note</string>
+    
+    <!-- Details -->
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="pin">Pin at the top</string>
+    <string name="unpin">Unpin from the top</string>
+    <string name="delete">Delete</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="note_saved">Note saved</string>
 </resources>

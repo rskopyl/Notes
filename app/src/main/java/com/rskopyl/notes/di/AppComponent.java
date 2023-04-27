@@ -2,6 +2,7 @@ package com.rskopyl.notes.di;
 
 import android.content.Context;
 
+import com.rskopyl.notes.ui.details.DetailsFragment;
 import com.rskopyl.notes.ui.home.HomeFragment;
 
 import javax.inject.Singleton;
@@ -23,6 +24,8 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable;
 public interface AppComponent {
 
     void inject(HomeFragment fragment);
+
+    void inject(DetailsFragment fragment);
 
     @ApplicationDisposable
     CompositeDisposable getApplicationDisposable();

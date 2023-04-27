@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        style="@style/Widget.Notes.AppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground"
+            android:theme="@style/ThemeOverlay.Notes.Toolbar"
+            app:menu="@menu/details"
+            app:navigationIcon="@drawable/ic_back_outlined" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:paddingHorizontal="@dimen/medium_100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_100"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/small_50">
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:maxLines="2"
+                android:paddingHorizontal="0dp"
+                android:paddingBottom="@dimen/medium_125"
+                android:textAppearance="?attr/textAppearanceHeadlineLarge"
+                android:textColor="?attr/colorOnBackground"
+                android:textColorHint="?attr/colorOnSurfaceVariant" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/medium_150"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="start|top"
+                android:hint="@string/content"
+                android:importantForAutofill="no"
+                android:inputType="text|textMultiLine"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnBackground"
+                android:textColorHint="?attr/colorOnSurfaceVariant" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

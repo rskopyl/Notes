@@ -5,6 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Objects;
 
 @Entity(tableName = "note")
@@ -25,6 +26,17 @@ public class Note {
 
     @ColumnInfo(name = "is_pinned")
     public boolean isPinned;
+
+    public static long EMPTY_ID = 0;
+
+    public Note() {
+        this(
+                EMPTY_ID,
+                "", "",
+                LocalDateTime.now(ZoneId.systemDefault()),
+                false
+        );
+    }
 
     public Note(
             long id,

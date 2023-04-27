@@ -1,7 +1,6 @@
 package com.rskopyl.notes.ui.home;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -20,6 +19,7 @@ import com.rskopyl.notes.data.preferences.AppPreferences;
 import com.rskopyl.notes.data.preferences.AppPreferences.Rendering;
 import com.rskopyl.notes.databinding.FragmentHomeBinding;
 import com.rskopyl.notes.ui.MultiViewModelFactory;
+import com.rskopyl.notes.ui.details.DetailsFragment;
 import com.rskopyl.notes.utils.MenuUtils;
 import com.rskopyl.notes.utils.SpacingItemDecoration;
 import com.rskopyl.notes.utils.ThemeUtils;
@@ -38,7 +38,17 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel viewModel;
 
-    private final NoteAdapter noteAdapter = new NoteAdapter();
+    private final NoteAdapter noteAdapter = new NoteAdapter(
+            note -> {
+                Bundle args = new Bundle();
+                args.putLong(DetailsFragment.Args.NOTE_ID, note.id);
+                getParentFragmentManager().beginTransaction()
+                        .add(R.id.fcv_main, DetailsFragment.class, args)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
+            }
+    );
 
     private final Map<Rendering, String> renderingToText = new HashMap<>(2);
 
@@ -53,10 +63,7 @@ public class HomeFragment extends Fragment {
                 requireActivity().getTheme(),
                 com.google.android.material.R.attr.colorOnBackground
         );
-        for (int index = 0; index < menu.size(); index++) {
-            Drawable menuIcon = menu.getItem(index).getIcon();
-            if (menuIcon != null) menuIcon.setTint(colorOnBackground);
-        }
+        MenuUtils.setIconTint(menu, colorOnBackground);
         MenuUtils.setOnMenuItemClickListener(
                 menu,
                 menuItem -> {
@@ -75,6 +82,13 @@ public class HomeFragment extends Fragment {
                 new SpacingItemDecoration(
                         getResources().getDimensionPixelSize(R.dimen.small_125)
                 )
+        );
+        binding.fabCreate.setOnClickListener(
+                view -> getParentFragmentManager().beginTransaction()
+                        .add(R.id.fcv_main, DetailsFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit()
         );
     }
 

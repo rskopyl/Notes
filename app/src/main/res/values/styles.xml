@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Toolbar -->
+    <style name="Widget.Notes.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:paddingTop">@dimen/small_125</item>
+        <item name="android:paddingBottom">@dimen/small_125</item>
+        <item name="android:background">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="ThemeOverlay.Notes.Toolbar" parent="Theme.Notes.DayNight">
+        <item name="iconTint">@color/on_background_enable</item>
+        <item name="navigationIconTint">?attr/colorOnBackground</item>
+        <item name="android:textColorSecondary">?attr/colorOnBackground</item>
+    </style>
+
     <style name="ThemeOverlay.Notes.ActionMenuView" parent="Theme.Notes.DayNight">
+        <item name="iconTint">?attr/colorOnBackground</item>
         <item name="android:textColorSecondary">?attr/colorOnBackground</item>
     </style>
 

@@ -54,6 +54,7 @@ dependencies {
     
     // Interface
     implementation "com.google.android.material:material:$material_version"
+    implementation "com.jakewharton.rxbinding4:rxbinding:$rxbinding_version"
 
     // Persistence
     implementation "androidx.room:room-runtime:$room_version"

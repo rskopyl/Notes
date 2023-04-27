@@ -17,6 +17,7 @@ buildscript {
 
         // Interface
         material_version = "1.8.0"
+        rxbinding_version = "4.0.0"
 
         // Persistence
         room_version = "2.5.1"

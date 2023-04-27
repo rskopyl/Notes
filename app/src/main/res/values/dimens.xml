@@ -9,6 +9,7 @@
 
     <!-- Medium -->
     <dimen name="medium_100">16dp</dimen>
+    <dimen name="medium_125">20dp</dimen>
     <dimen name="medium_150">24dp</dimen>
 
     <!-- Large -->

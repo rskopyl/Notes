@@ -6,10 +6,9 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        style="@style/Widget.Notes.AppBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/colorBackground"
-        android:paddingVertical="@dimen/small_125">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"

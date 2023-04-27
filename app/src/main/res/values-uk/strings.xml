@@ -6,4 +6,12 @@
     <string name="list">Подання списку</string>
     <string name="grid">Подання сітки</string>
     <string name="create_note">Створити нотатку</string>
+    <string name="save">Зберегти</string>
+    <string name="share">Поширити</string>
+    <string name="pin">Закріпити вгорі</string>
+    <string name="title">Назва</string>
+    <string name="content">Зміст</string>
+    <string name="delete">Видалити</string>
+    <string name="unpin">Відкріпити</string>
+    <string name="note_saved">Нотатку збережено</string>
 </resources>
